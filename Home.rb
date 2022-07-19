@@ -10,7 +10,7 @@ class A
 	include Login
 	def initialize
 		    print "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"                
-            puts "*******************************************************LWelcome to the FaceBook***********************************"
+            puts "*******************************************************Welcome to the FaceBook***********************************"
             puts "\n\n\n\n\n\n"
             puts "\t\t\t\t\t\t\t1.Log_in"
             puts "\t\t\t\t\t\t\t2.New user please Singup"
