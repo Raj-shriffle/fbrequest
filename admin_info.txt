@@ -1,0 +1,1 @@
+[{"id"=>0, "name"=>"Raaz", "mail"=>"kushwahraaz7@gmail.com", "pass"=>"rajku12345", "Mob"=>"+918889299688"}, {"id"=>78, "name"=>"Raaj", "mail"=>"kushwahraaj7@gmail.com", "pass"=>"Raajk12345", "Mob"=>"+918827650565"}, {"id"=>25, "name"=>"Salmankhan", "mail"=>"khansallu@gmail.com", "pass"=>"salman1234", "Mob"=>"+919898676767"}]
