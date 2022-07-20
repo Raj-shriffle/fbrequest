@@ -40,6 +40,7 @@ module Auth_view
         Auth_view.take
     end
     def Auth_view.take(a='a',b='b')
+    	puts "****************************************Welcome Admin************************"
         puts '1.view_Profile'
         puts '2.view_Users'
         puts '3.update_users'
@@ -63,7 +64,7 @@ module Auth_view
            when 8
            	 exit
            else 
-           	p 'invaild users'
+           	p 'invaild option'
            	sleep(1)
            	 raise
         end
@@ -104,13 +105,13 @@ module Auth_view
               		array.push(arr[i]['pas'])
               		array.push(arr[i]['G'])
               		flag+=1
-              		
+              		break
                 end
               end
               if flag>0
                   Auth_view.select_op(*array,input)
               else
-              	print "inviald"
+              	p 'inviald','Enter vaild name'
               	raise
               end
           rescue
@@ -122,9 +123,8 @@ module Auth_view
        ar=eval(ar)
        data.close
        puts '1.update Name','2.Update mail','3.update pass','4.update G','5.back'
-       op=gets.chomp.to_i
-       case op
-          when 1
+       op=gets.chomp
+       if op=="1"
        	  for i in 0...ar.length do 
        	 	if ar[i]['name']==array[0]
        	 		puts 'Enter Your Update Name'
@@ -149,7 +149,7 @@ module Auth_view
        	 		Auth_view.take
        	 	end
        	end
-          when 2
+       elsif op=="2"
        	for i in 0...ar.length do 
        	 	if ar[i]['mail']==array[1]
        	 		puts 'Enter Your Mail'
@@ -164,7 +164,7 @@ module Auth_view
        	 		Auth_view.take
        	 	end
        	 end
-       	when 3
+       	elsif op=="3"
        	 for i in 0...ar.length do 
        	 	if ar[i]['pas']==array[2]  
        	 		puts 'Enter Your Pass'
@@ -179,7 +179,7 @@ module Auth_view
        	 		Auth_view.take
        	 	end
        	 end
-       	when 4
+       	elsif op=="4"
        	 for i in 0...ar.length do 
        	 	 if ar[i]['G']==array[3]  
        	 		puts 'Enter your Gender'
@@ -194,9 +194,15 @@ module Auth_view
        	 		Auth_view.take
        	 	 end
        	 end
-       	 when 5
+       	 elsif op=="5"
                 Auth_view.data
-       	 end
+       	else
+       		p 'invaild option'
+       		sleep(0.5)
+       		raise
+       	end
+      rescue
+      	retry
 	end
 	def Auth_view.logout
 		a=A.new

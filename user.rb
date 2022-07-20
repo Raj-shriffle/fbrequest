@@ -22,9 +22,9 @@ module User
 	def User.see(name,mail,pass,gender)
 		print "\n\n\n\n\n\n\n"
 		puts "********************************Welcome #{name}***********************************************"
-		puts '1.View_Profile','2.UPDATE_PROFILE','3.LogOut','4.Friends','5.Requests','6.more','close program press 0'
-		ask=gets.chomp.to_i
-		if ask==1
+		puts '1.View_Profile','2.UPDATE_PROFILE','3.LogOut','4.Friends','5.see Requests and accept','6.Send request','close program press 0'
+		ask=gets.chomp
+		if ask=="1"
 			puts '**********************************************USER PROFILE*************************************************'
 		    print "Name :-   #{name}"
 		    puts  
@@ -34,29 +34,32 @@ module User
 		    puts 
 		    print "Gen   :-  #{gender}"
 		    User.see(name,mail,pass,gender)
-		elsif ask==2
+		elsif ask=="2"
 			puts "A.Update_Name"
 			puts "B.Update_mail"
 			puts "C.Update_pass"
 			puts "D.update Gender"
 			puts "E.BACK"
             User.updat(name,mail,pass,gender)
-	    elsif ask==3
+	    elsif ask=="3"
 	    	puts "\t\t\t\t\t\t\tLogout successfully"
 	    	puts puts puts puts puts puts puts puts puts puts puts puts puts puts puts puts puts puts puts puts puts puts puts puts 
 	    	a=A.new
-	    elsif ask==4
+	    elsif ask=="4"
 	    	Request.friends(name,mail,pass,gender)
-	    elsif ask==5
+	    elsif ask=="5"
 	    	Request.req(name,mail,pass,gender)
-	    elsif ask==6
+	    elsif ask=="6"
 	    	Request.more(name,mail,pass,gender)
-	    elsif ask==0
+	    elsif ask=='0'
 	    	exit
 	    else
-	    	p 'invaild'
-	    	User.see(name,mail,pass,gender)
+	    	p 'invaild!!'
+	    	sleep(1)
+	    	raise
 	    end
+	   rescue 
+	   	retry
 	end
 	def User.updat(n,m,p1,gender)
 	   puts "Enter Your Choice Here"
