@@ -22,7 +22,7 @@ module User
 	def User.see(name,mail,pass,gender)
 		print "\n\n\n\n\n\n\n"
 		puts "********************************Welcome #{name}***********************************************"
-		puts '1.View_Profile','2.UPDATE_PROFILE','3.LogOut','4.Friends','5.see Requests and accept','6.Send request','close program press 0'
+		puts '1.View_Profile','2.UPDATE_PROFILE','3.LogOut','4.Friends','5.see Requests list and accept','6.Send request','close program press 0'
 		ask=gets.chomp
 		if ask=="1"
 			puts '**********************************************USER PROFILE*************************************************'

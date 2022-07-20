@@ -111,11 +111,10 @@ class A
 		retry
 end
 	def mob_check(name,email,pass)
-		puts 'Enter your Mobile no'
-		mob =gets.chomp
-		mobv=/^(?:[+]{1}+[9]{1}+[1]{1}+[6789]{1}+[0-9]{9})$/
-		if mobv.match?(mob)
-			validation(name,email,pass,mob)
+		puts 'Enter your Gender'
+		g=gets.chomp
+		if g=='f' || g=='m'
+			validation(name,email,pass,g)
 		else
 			raise
 		end
@@ -124,7 +123,7 @@ end
 		sleep(1)
 		retry
 	end
-	def validation(n,m,pa,mob)
+	def validation(n,m,pa,g)
 		                 k12=File.new('Singupdata.txt','r')
 		    	         j2=k12.read 
 		    	         k12.close
@@ -135,8 +134,8 @@ end
 		                     h.store("id",id)
 		                     h.store("name",n)
 		                     h.store("mail",m)
-		                     h.store("pass",pa)
-		                     h.store("Mob",mob)
+		                     h.store("pas",pa)
+		                     h.store("G",g)
 		                     f3=File.new("Singupdata.txt",'w')
 		                     a.push(h)
 		                     f3.write(a)
@@ -153,8 +152,8 @@ end
 		                      h.store("id",id)
 		                     h.store("name",n)
 		                     h.store("mail",m)
-		                     h.store("pass",pa)
-		                     h.store("Mob",mob)
+		                     h.store("pas",pa)
+		                     h.store("G",g)
 		                     j2.push(h)
 		                     f3=File.new("Singupdata.txt",'w')
 		                     f3.write(j2)
